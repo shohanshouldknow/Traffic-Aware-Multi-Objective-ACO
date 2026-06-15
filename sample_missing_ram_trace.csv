@@ -1,0 +1,5 @@
+vm_id,cpu_usage,timestamp,machine_id,network_in,network_out
+a,0.12,0,machine-1,10,15
+b,0.20,0,machine-1,12,18
+c,0.08,1,machine-2,4,9
+d,0.30,1,machine-2,22,30

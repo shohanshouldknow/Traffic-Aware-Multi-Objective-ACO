@@ -1,0 +1,5 @@
+algorithm,active_pms,active_switches,server_power_w,network_power_w,total_power_w,energy_savings_pct,average_hop_count,sla_violations
+FFD,21,10,4927.6,800.0,5727.6,0.0,4.76,0
+ACS-VMP,20,10,4807.6,800.0,5607.6,2.1,4.66,0
+Traffic-Aware VMP,35,5,6607.6,365.0,6972.6,-21.74,1.74,0
+TA-MOACO,20,3,4807.6,227.0,5034.6,12.1,2.25,0

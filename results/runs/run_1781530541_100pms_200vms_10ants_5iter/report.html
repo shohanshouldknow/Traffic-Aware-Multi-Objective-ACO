@@ -1,0 +1,91 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>TA-MOACO Report</title>
+<style>body{font-family:Segoe UI,Arial,sans-serif;margin:36px;color:#172033}img{max-width:100%;border:1px solid #d9e2ec;border-radius:10px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #d1d5db;padding:8px}</style>
+</head><body>
+<h1>TA-MOACO Simulation Report</h1>
+<p><strong>Run:</strong> run_1781530541_100pms_200vms_10ants_5iter</p>
+<p><strong>Scenario:</strong> medium</p>
+<p><strong>Recommended:</strong> TA-MOACO, total power 4743.00 W, savings 9.61%.</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>algorithm</th>
+      <th>active_pms</th>
+      <th>active_switches</th>
+      <th>server_power_w</th>
+      <th>network_power_w</th>
+      <th>switch_power_w</th>
+      <th>total_power_w</th>
+      <th>total_dc_power_w</th>
+      <th>energy_savings_pct</th>
+      <th>average_hop_count</th>
+      <th>average_utilization_pct</th>
+      <th>sla_violations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FFD</td>
+      <td>19</td>
+      <td>9</td>
+      <td>4516.0</td>
+      <td>731.0</td>
+      <td>731.0</td>
+      <td>5247.0</td>
+      <td>5247.0</td>
+      <td>0.00</td>
+      <td>4.55</td>
+      <td>90.53</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>ACS-VMP</td>
+      <td>19</td>
+      <td>9</td>
+      <td>4516.0</td>
+      <td>731.0</td>
+      <td>731.0</td>
+      <td>5247.0</td>
+      <td>5247.0</td>
+      <td>0.00</td>
+      <td>4.59</td>
+      <td>90.53</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Traffic-Aware VMP</td>
+      <td>34</td>
+      <td>5</td>
+      <td>6316.0</td>
+      <td>365.0</td>
+      <td>365.0</td>
+      <td>6681.0</td>
+      <td>6681.0</td>
+      <td>-27.33</td>
+      <td>1.62</td>
+      <td>50.59</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>TA-MOACO</td>
+      <td>19</td>
+      <td>3</td>
+      <td>4516.0</td>
+      <td>227.0</td>
+      <td>227.0</td>
+      <td>4743.0</td>
+      <td>4743.0</td>
+      <td>9.61</td>
+      <td>2.42</td>
+      <td>90.53</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Energy Comparison</h2><img src="energy_comparison.png">
+<h2>TA-MOACO Convergence</h2><img src="convergence_curve.png">
+<h2>Traffic Heatmap</h2><img src="traffic_heatmap.png">
+<h2>Active Switch Map</h2><img src="switch_state_map.png">
+<h2>VM Placement by ToR</h2><img src="topology_placement.png">
+</body></html>

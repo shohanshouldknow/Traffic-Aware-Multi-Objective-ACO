@@ -1,0 +1,5 @@
+best_algorithm,algorithm,active_pms,active_switches,server_power_w,network_power_w,switch_power_w,total_power_w,total_dc_power_w,energy_savings_pct,average_hop_count,network_localization_score,average_utilization_pct,sla_violations
+,FFD,19,9,4516.0,731.0,731.0,5247.0,5247.0,0.0,4.55,24.11,90.53,0
+,ACS-VMP,19,9,4516.0,731.0,731.0,5247.0,5247.0,0.0,4.59,23.51,90.53,0
+,Traffic-Aware VMP,34,5,6316.0,365.0,365.0,6681.0,6681.0,-27.33,1.62,72.99,50.59,0
+YES,TA-MOACO,20,3,4636.0,227.0,227.0,4863.0,4863.0,7.32,2.32,61.31,86.0,0

@@ -1,0 +1,83 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>TA-MOACO Report</title>
+<style>body{font-family:Segoe UI,Arial,sans-serif;margin:36px;color:#172033}img{max-width:100%;border:1px solid #d9e2ec;border-radius:10px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #d1d5db;padding:8px}</style>
+</head><body>
+<h1>TA-MOACO Simulation Report</h1>
+<p><strong>Run:</strong> run_1781473486_100pms_4vms_10ants_5iter</p>
+<p><strong>Scenario:</strong> medium</p>
+<p><strong>Recommended:</strong> FFD, total power 258.00 W, savings 0.00%.</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>algorithm</th>
+      <th>active_pms</th>
+      <th>active_switches</th>
+      <th>server_power_w</th>
+      <th>network_power_w</th>
+      <th>total_power_w</th>
+      <th>energy_savings_pct</th>
+      <th>average_hop_count</th>
+      <th>sla_violations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FFD</td>
+      <td>1</td>
+      <td>1</td>
+      <td>211.0</td>
+      <td>47.0</td>
+      <td>258.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>ACS-VMP</td>
+      <td>1</td>
+      <td>1</td>
+      <td>211.0</td>
+      <td>47.0</td>
+      <td>258.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Traffic-Aware VMP</td>
+      <td>1</td>
+      <td>1</td>
+      <td>211.0</td>
+      <td>47.0</td>
+      <td>258.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>TA-MOACO</td>
+      <td>1</td>
+      <td>1</td>
+      <td>211.0</td>
+      <td>47.0</td>
+      <td>258.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Real-World Trace Processing</h2>
+<p><strong>Source:</strong> Alibaba Cluster Trace-style CSV</p>
+<p><strong>Traffic method:</strong> inferred from app_id/timestamp/network hints</p>
+<p><strong>VMs:</strong> 4 | <strong>Applications:</strong> 2 | <strong>Time windows:</strong> 2</p>
+<p><strong>CPU average/peak:</strong> 17.5 / 30.0 | <strong>RAM average/peak:</strong> 43.75 / 75.0</p>
+<h2>Real Dataset Profile</h2><img src="dataset_profile.png">
+<h2>Time-Window Energy Simulation</h2><img src="time_window_energy.png">
+<h2>Energy Comparison</h2><img src="energy_comparison.png">
+<h2>TA-MOACO Convergence</h2><img src="convergence_curve.png">
+<h2>Traffic Heatmap</h2><img src="traffic_heatmap.png">
+<h2>Active Switch Map</h2><img src="switch_state_map.png">
+<h2>VM Placement by ToR</h2><img src="topology_placement.png">
+</body></html>

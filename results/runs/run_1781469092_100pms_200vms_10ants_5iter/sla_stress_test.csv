@@ -1,0 +1,11 @@
+algorithm,load_multiplier,sla_violations
+FFD,1.0,0
+TA-MOACO,1.0,0
+FFD,1.15,0
+TA-MOACO,1.15,0
+FFD,1.3,0
+TA-MOACO,1.3,0
+FFD,1.45,0
+TA-MOACO,1.45,0
+FFD,1.6,0
+TA-MOACO,1.6,0

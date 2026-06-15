@@ -1,0 +1,116 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>TA-MOACO Report</title>
+<style>body{font-family:Segoe UI,Arial,sans-serif;margin:36px;color:#172033}img{max-width:100%;border:1px solid #d9e2ec;border-radius:10px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #d1d5db;padding:8px}</style>
+</head><body>
+<h1>TA-MOACO Simulation Report</h1>
+<p><strong>Run:</strong> run_1781550488_100pms_24vms_10ants_5iter</p>
+<p><strong>Scenario:</strong> medium</p>
+<p><strong>Recommended:</strong> TA-MOACO, total power 1000.10 W, savings 33.51%.</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>best_algorithm</th>
+      <th>algorithm</th>
+      <th>active_pms</th>
+      <th>active_switches</th>
+      <th>server_power_w</th>
+      <th>network_power_w</th>
+      <th>switch_power_w</th>
+      <th>total_power_w</th>
+      <th>total_dc_power_w</th>
+      <th>energy_savings_pct</th>
+      <th>average_hop_count</th>
+      <th>network_localization_score</th>
+      <th>average_utilization_pct</th>
+      <th>sla_violations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td>FFD</td>
+      <td>4</td>
+      <td>7</td>
+      <td>931.1</td>
+      <td>573.0</td>
+      <td>573.0</td>
+      <td>1504.1</td>
+      <td>1504.1</td>
+      <td>0.00</td>
+      <td>3.99</td>
+      <td>33.44</td>
+      <td>86.75</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>ACS-VMP</td>
+      <td>4</td>
+      <td>7</td>
+      <td>931.1</td>
+      <td>573.0</td>
+      <td>573.0</td>
+      <td>1504.1</td>
+      <td>1504.1</td>
+      <td>0.00</td>
+      <td>3.96</td>
+      <td>33.92</td>
+      <td>86.75</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Traffic-Aware VMP</td>
+      <td>4</td>
+      <td>1</td>
+      <td>931.1</td>
+      <td>69.0</td>
+      <td>69.0</td>
+      <td>1000.1</td>
+      <td>1000.1</td>
+      <td>33.51</td>
+      <td>1.51</td>
+      <td>74.78</td>
+      <td>86.75</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>YES</td>
+      <td>TA-MOACO</td>
+      <td>4</td>
+      <td>1</td>
+      <td>931.1</td>
+      <td>69.0</td>
+      <td>69.0</td>
+      <td>1000.1</td>
+      <td>1000.1</td>
+      <td>33.51</td>
+      <td>1.43</td>
+      <td>76.20</td>
+      <td>86.75</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Real-World Trace Processing</h2>
+<p><strong>Source:</strong> Custom CSV</p>
+<p><strong>Traffic method:</strong> inferred from app_id/timestamp/network hints</p>
+<p><strong>VMs:</strong> 24 | <strong>Applications:</strong> 4 | <strong>Time windows:</strong> 4</p>
+<p><strong>CPU average/peak:</strong> 14.46 / 28.0 | <strong>RAM average/peak:</strong> 34.0 / 70.0</p>
+<p><strong>Traffic inference:</strong> normalized 0-1 matrix from app, timestamp, CPU, RAM, network usage, correlation score, and small deterministic noise.</p>
+<p><strong>Traffic min/mean/max:</strong> 0.3473 / 0.5676 / 1.0</p>
+<h2>Real Dataset Profile</h2><img src="dataset_profile.png">
+<h2>Time-Window Energy Simulation</h2><img src="time_window_energy.png">
+<h2>Energy Comparison</h2><img src="energy_comparison.png">
+<h2>Server vs Network Power</h2><img src="server_network_power.png">
+<h2>Active PM Comparison</h2><img src="active_pm_comparison.png">
+<h2>Active Switch Comparison</h2><img src="active_switch_comparison.png">
+<h2>TA-MOACO Convergence</h2><img src="convergence_curve.png">
+<h2>Traffic Heatmap</h2><img src="traffic_heatmap.png">
+<h2>Active Switch Map</h2><img src="switch_state_map.png">
+<h2>VM Placement by ToR</h2><img src="topology_placement.png">
+<h2>Rack Utilization</h2><img src="rack_utilization.png">
+<h2>CPU Utilization</h2><img src="cpu_utilization.png">
+<h2>RAM Utilization</h2><img src="ram_utilization.png">
+</body></html>

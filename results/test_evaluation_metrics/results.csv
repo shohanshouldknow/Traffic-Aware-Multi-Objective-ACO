@@ -1,0 +1,3 @@
+best_algorithm,algorithm,active_pms,active_switches,server_power_w,network_power_w,switch_power_w,total_power_w,total_dc_power_w,energy_savings_pct,average_hop_count,network_localization_score,average_utilization_pct,sla_violations
+,A,2,2,200.0,40.0,40.0,240.0,240.0,0.0,4.0,33.3,50.0,0
+YES,B,1,1,180.0,20.0,20.0,200.0,200.0,16.7,2.0,66.7,80.0,0
