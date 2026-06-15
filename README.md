@@ -131,10 +131,57 @@ The local dashboard includes:
 Optional Streamlit dashboard:
 
 ```bash
+pip install streamlit
 streamlit run app.py
 ```
 
 If Streamlit is not installed, `app.py` prints instructions for using `local_dashboard.py`.
+
+## Vercel Deployment
+
+This repository includes a Vercel-compatible Python serverless entrypoint:
+
+```text
+api/index.py
+vercel.json
+```
+
+The Vercel version is a public synthetic-workload demo. It runs the same simulation engine and generates comparison tables and charts, but it does not rely on local Windows file paths. For full real-CSV local paths and persistent exported run folders, use:
+
+```bash
+python local_dashboard.py
+```
+
+Deploy from GitHub:
+
+1. Push the repository to GitHub.
+2. Import the repository in Vercel.
+3. Keep the default project settings.
+4. Vercel will use `vercel.json` and deploy `api/index.py`.
+
+Deploy from CLI:
+
+```bash
+npx vercel
+```
+
+Production deploy:
+
+```bash
+npx vercel --prod
+```
+
+Vercel entrypoint:
+
+```text
+api/index.py exports top-level app
+```
+
+Health check:
+
+```text
+/api/health
+```
 
 ## Dataset Support
 
@@ -419,4 +466,3 @@ Data: Real-world trace CSV
 Trace type: Generic CSV trace
 Trace CSV path: C:\Users\Asus\OneDrive\Documents\Green Computing\sample_real_trace.csv
 ```
-
