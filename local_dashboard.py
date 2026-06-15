@@ -14,6 +14,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, "src")
 if SRC not in sys.path:
     sys.path.insert(0, SRC)
+RESULTS_ROOT = os.path.abspath(os.environ.get("TA_MOACO_RESULTS_DIR", os.path.join(ROOT, "results")))
 
 from simulation import run_simulation, save_results_csv
 from simulation import generate_traffic_matrix, generate_vms
@@ -470,8 +471,8 @@ def chart_gallery_html(image_base: str, output_dir: str, trace_bundle=None, incl
 def append_run_history(output_dir: str, df, query: dict[str, list[str]], elapsed: float):
     """Append a compact row to the global and per-run history CSV files."""
 
-    os.makedirs("results", exist_ok=True)
-    history_path = os.path.join("results", "run_history.csv")
+    os.makedirs(RESULTS_ROOT, exist_ok=True)
+    history_path = os.path.join(RESULTS_ROOT, "run_history.csv")
     ffd = df[df["algorithm"] == "FFD"].iloc[0]
     moaco = df[df["algorithm"] == "TA-MOACO"].iloc[0]
     row = {
@@ -779,7 +780,7 @@ def run_simulation_html(query: dict[str, list[str]]) -> str:
     best = min(display_results, key=lambda result: (result.sla_violations > 0, result.total_power, result.average_hop_count))
     display_df["best_algorithm"] = display_df["algorithm"].apply(lambda name: "YES" if name == best.name else "")
     run_id = f"run_{int(started)}_{pms}pms_{vms}vms_{ants}ants_{iterations}iter"
-    output_dir = os.path.join("results", "runs", run_id)
+    output_dir = os.path.join(RESULTS_ROOT, "runs", run_id)
     save_results_csv(display_df, output_dir)
     if trace_bundle:
         pd.DataFrame([trace_bundle.profile]).to_csv(os.path.join(output_dir, "dataset_profile.csv"), index=False)
@@ -1069,8 +1070,10 @@ class DashboardHandler(BaseHTTPRequestHandler):
 
     def serve_file(self, relative_path: str) -> None:
         clean_path = relative_path.split("?", 1)[0]
-        path = os.path.abspath(os.path.join(ROOT, clean_path))
-        if not path.startswith(os.path.abspath(os.path.join(ROOT, "results"))) or not os.path.exists(path):
+        if clean_path.startswith("results/"):
+            clean_path = clean_path[len("results/") :]
+        path = os.path.abspath(os.path.join(RESULTS_ROOT, clean_path))
+        if not path.startswith(RESULTS_ROOT) or not os.path.exists(path):
             self.send_error(404)
             return
         self.send_response(200)
